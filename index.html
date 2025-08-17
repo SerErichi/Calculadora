@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- 
+    <br> - Line breaker
+    <pre> - Texto preformatado
+    <hr> - Linha horizontal para separar elementos
+    <img alt - String que aparecerá caso a página não carregue>
+    <b> - Bold text
+    <strong> - Important text
+    <i> - Italic text
+    <em> - Emphasized text
+    <mark> - Marked text
+    <small> - Smaller text
+    <del> - Deleted text
+    <ins> - Inserted text
+    <sub> - Subscript text
+    <sup> - Superscript text
+        
+    -->
+    <!--
+        <a href="https://media.tenor.com/x8v1oNUOmg4AAAAM/rickroll-roll.gif">This is a link</a>
+        <img src="https://i.chzbgr.com/full/7462982656/h68638BEA/break-dancing-gorilla" width="300" height="500" alt="break-dancing-gorilla">
+        -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>A Calculadora</title>
+    <link href="style.css" rel="stylesheet">
+    <script src = "script.js"></script>
+</head>
+<body>
+    <div class="calculadora">
+        <div class="display">
+            <input type="text" class="visores" id="calc_anterior" readonly>
+            <input type="text" class="visores" id="visor" readonly>
+        </div>
+        <div class="teclado">
+            <button class="botao" onclick="limpar()">C</button>
+            <button class="botao">⁺/₋</button>
+            <button class="botao" onclick="inserir('%')">%</button>
+            <button class="botao" onclick="inserir('/')">/</button>
+
+            <button class="botao" onclick="inserir('7')">7</button>
+            <button class="botao" onclick="inserir('8')">8</button>
+            <button class="botao" onclick="inserir('9')">9</button>
+            <button class="botao" onclick="inserir('*')">*</button>
+
+            <button class="botao" onclick="inserir('4')">4</button>
+            <button class="botao" onclick="inserir('5')">5</button>
+            <button class="botao" onclick="inserir('6')">6</button>
+            <button class="botao" onclick="inserir('-')">-</button>
+
+            <button class="botao" onclick="inserir('1')">1</button>
+            <button class="botao" onclick="inserir('2')">2</button>
+            <button class="botao" onclick="inserir('3')">3</button>
+            <button class="botao" onclick="inserir('+')">+</button>
+
+            <button class="botao zero" onclick="inserir('0')">0</button>
+            <button class="botao" onclick="inserir('.')">.</button>
+            <button class="botao" onclick="calcular()">=</button>
+        </div>
+    </div>
+</body>
+</html>
