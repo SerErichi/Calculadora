@@ -63,10 +63,11 @@ body{
   gap: 15px;                             /* Espaçamento entre os itens */
   border-radius: 12px;
   background-color: white;
+  box-shadow: 0px -4px 5px #ffffff3a;
 }
 
 .botao {
-  background-color: rgb(255, 255, 255);
+  background-color: #fffffe;
   color: #2f73a2;
   border-radius: 15px;
   text-align: center;
@@ -84,6 +85,28 @@ body{
     grid-column: span 2;
 }
 
-.botao:hover {
-  background-color: rgb(215, 215, 215);
+.botao.especial{
+    color: #868686;
+}
+
+.botao.operacao{
+    color: #6842ef;
+}
+
+.botao.igual{
+    color: #ffffff;
+    background-color: #7febd3;
+}
+
+.botao:hover{
+    background-color: #dddddd;
+}
+
+.botao.igual:hover {
+  background-color: #61beaa;
+}
+
+.botao:active{
+    filter: brightness(50%);
+    transform: scale(0.95);
 }
