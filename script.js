@@ -20,17 +20,27 @@ function inserir(valor) {
 
 
 function inverter_valor(){
-    const valor = visor.value;
+    let visor = document.getElementById('visor');
+    let valor = visor.value;
 
-    // Encontra o último "token numérico" no final da string, com sinal opcional e decimais
-    const m = valor.match(/-?\d+(?:\.\d+)?\s*$/);
-    if (!m) return; // não há número no final, nada a fazer
+    // procura o último operador (+ - * /)
+    let i = valor.length - 1;
+    while (i >= 0 && !"+-*/".includes(valor[i])) {
+        i--;
+    }
 
-    const numero = Number(m[0]);     // ex.: "-340" -> -340
-    const invertido = -numero;       // inverte o sinal
-    const inicio = m.index;          // posição onde o número começa
+    // separa a parte antes e depois do operador
+    let antes = valor.slice(i + 1);
+    let numero = valor.slice(i);
 
-    visor.value = valor.slice(0, inicio) + String(invertido);
+    console.log("antes: ", antes);
+    console.log("depois: ", numero);
+
+    // inverte o número
+    if(numero < 0)
+        visor.value = antes + numero.replace("-","+");
+    else
+        visor.value = antes + numero.replace("+","-");
 }
 
 function porcentagem(){

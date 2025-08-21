@@ -5,7 +5,6 @@ p{
 body{
     color: white;
     background-color: rgb(24, 24, 24);
-    margin: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -27,35 +26,48 @@ body{
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     flex: 2;
-    display: flex;
-    align-items: flex-end;
+
+    flex-wrap: wrap;          /* permite quebrar linha */
+    align-content: flex-end;
     justify-content: flex-end;
+
     background-color: #171717;
     background: linear-gradient(150deg, #ffffff13, #171717, #171717);
 }
 
 .visores{
-    margin: 10px;
     text-align: right;
     border: none;
-    width: 100%;
+    width: 48%;
     background: transparent;
     color: #ffffff;
 }
 
+.linha-visores {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.anterior{
+    text-align: right;
+}
+
 #calc_anterior{
     font-size: 25px;
+    width: 100%;
     color: #427ea875;
 }
 
-#visor{
-    font-size: 40px;
+
+#visor2, #visor {
+    font-size: 40px; 
 }
 
 .teclado {
   display: grid;  
   padding: 20px;
-  aspect-ratio: 1/1;
   flex: 3;   
   height: 60%;                     
   grid-template-columns: repeat(4, 1fr); /* 4 colunas de tamanho igual */
