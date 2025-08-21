@@ -27,7 +27,7 @@ body{
     border-top-right-radius: 20px;
     flex: 2;
 
-    flex-wrap: wrap;          /* permite quebrar linha */
+    flex-wrap: wrap;    
     align-content: flex-end;
     justify-content: flex-end;
 
@@ -38,7 +38,7 @@ body{
 .visores{
     text-align: right;
     border: none;
-    width: 48%;
+    width: 98%;
     background: transparent;
     color: #ffffff;
 }
@@ -56,7 +56,7 @@ body{
 
 #calc_anterior{
     font-size: 25px;
-    width: 100%;
+    width: 98%;
     color: #427ea875;
 }
 

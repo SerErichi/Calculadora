@@ -1,5 +1,6 @@
 function limpar() {
   document.getElementById('visor').value = '';
+  document.getElementById("calc_anterior").value = '';
 }
 
 function trava(){
@@ -13,7 +14,11 @@ function trava(){
 
 function inserir(valor) {
   let visor = document.getElementById('visor');
+  let digito_operador = /^[+\-/*=!]{1}$/.test(valor);
     if (visor.value.length < 13 && !trava()){
+      if (/^[+\-/*]{1}$/.test(visor.value[visor.value.length-1]) && digito_operador)
+        visor.value = visor.value.slice(0,-1) + valor;
+      else
         visor.value += valor;
     }
 }
@@ -30,17 +35,23 @@ function inverter_valor(){
     }
 
     // separa a parte antes e depois do operador
-    let antes = valor.slice(i + 1);
-    let numero = valor.slice(i);
+    let antes = valor.slice(0,i);
+    let operador = valor.slice(i,i+1);
+    let numero = valor.slice(i+1);
 
-    console.log("antes: ", antes);
-    console.log("depois: ", numero);
+    //console.log("antes: ", antes);
+    //console.log("Operador: ", operador);
+    //console.log("depois: ", numero);
+    //console.log("Position: ", i);
 
     // inverte o número
-    if(numero < 0)
-        visor.value = antes + numero.replace("-","+");
+    if(operador == "*" || operador == "/")
+        visor.value = antes + operador + -Number(numero);
+    else if (operador == "+")
+        visor.value = antes + "-" + numero;
     else
-        visor.value = antes + numero.replace("+","-");
+        visor.value = antes + "+" + numero;
+        
 }
 
 function porcentagem(){
